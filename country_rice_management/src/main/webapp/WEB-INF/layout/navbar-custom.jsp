@@ -54,18 +54,6 @@
         </li>
         <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
             <li class="d-none d-sm-block">
-<%--                <form method="get" action="/users?action=search" class="app-search">--%>
-<%--                    <div class="app-search-box">--%>
-<%--                        <div class="input-group">--%>
-<%--                            <input type="text" name="search" class="form-control" placeholder="Search..." value="${requestScope.search}">--%>
-<%--                            <div class="input-group-append">--%>
-<%--                                <button class="btn" type="submit">--%>
-<%--                                    <i class="fas fa-search"></i>--%>
-<%--                                </button>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </form>--%>
             </li>
         </ul>
 
