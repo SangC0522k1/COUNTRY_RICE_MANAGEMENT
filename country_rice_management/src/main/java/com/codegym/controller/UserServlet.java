@@ -77,15 +77,6 @@ public class UserServlet extends HttpServlet {
         }
     }
 
-//    private void listUser(HttpServletRequest request, HttpServletResponse response)
-//            throws SQLException, IOException, ServletException {
-//        List<User> listUser = userDAO.selectAllUsers();
-//        request.setAttribute("listUser", listUser);
-//        System.out.println(listUser);
-//        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/user/list.jsp");
-//        dispatcher.forward(request, response);
-//    }
-
     private void listNumberPage(HttpServletRequest req, HttpServletResponse resp) throws SQLException, ClassNotFoundException, ServletException, IOException {
         System.out.println("numberPage");
         int page = 1;
@@ -129,33 +120,9 @@ public class UserServlet extends HttpServlet {
 
     }
 
-//    private void showDeleteForm(HttpServletRequest request, HttpServletResponse response)
-//            throws SQLException, ServletException, IOException {
-//        int id = Integer.parseInt(request.getParameter("id"));
-//        User existingUser = userDAO.selectUser(id);
-//        RequestDispatcher dispatcher = request.getRequestDispatcher("user/delete.jsp");
-//        request.setAttribute("user", existingUser);
-//        dispatcher.forward(request, response);
-//
-//    }
 
     private void insertUser(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
-//        String username = request.getParameter("username");
-//        String password = request.getParameter("password");
-//        String name = request.getParameter("fullname");
-//        String phone = request.getParameter("phone");
-//        String email = request.getParameter("email");
-//        String address = request.getParameter("address");
-//        User newUser = new User(username, password, name,phone,email,address);
-//        System.out.println("alo");
-//        System.out.println(newUser);
-//        userDAO.insertUser(newUser);
-//
-//
-//
-//        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/user/add.jsp");
-//        dispatcher.forward(request, response);
 
         User user;
         String userName = request.getParameter("username").replaceAll(" ", "").toLowerCase();
@@ -168,7 +135,6 @@ public class UserServlet extends HttpServlet {
         boolean isPassword = ValidateUtils.isPasswordVailid(password);
         boolean isPhone = ValidateUtils.isNumberPhoneVailid(phone);
         boolean isEmail = ValidateUtils.isEmailValid(email);
-//        boolean isUserName = ValidateUtils.isUserNameVailid(userName);
 
         user = new User(userName, password, fullName, phone, email, address);
         if (userName.isEmpty() ||
@@ -210,9 +176,7 @@ public class UserServlet extends HttpServlet {
         if (userDAO.existsByEmail(email)) {
             errors.add("Email đã tồn tại");
         }
-//        if (!isUserName) {
-//            errors.add("UserName không đúng định dạng (không có khoảng cách) ");
-//        }
+
         if (userDAO.existByUsername(userName)) {
             errors.add("Username này đã tồn tại!");
         }
@@ -244,18 +208,6 @@ public class UserServlet extends HttpServlet {
 
     private void updateUser(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
-//        int id = Integer.parseInt(request.getParameter("id"));
-//        String username = request.getParameter("username");
-//        String password = request.getParameter("password");
-//        String fullName = request.getParameter("fullname");
-//        String phone = request.getParameter("phone");
-//        String email = request.getParameter("email");
-//        String address = request.getParameter("address");
-//        User newUser = new User(id,username, password, fullName,phone,email,address);
-//        userDAO.updateUser(newUser);
-////        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/user/list.jsp");
-////        dispatcher.forward(request, response);
-//        response.sendRedirect("/users");
         List<String> errors = new ArrayList<>();
         User user = null;
         String id= request.getParameter("id");
@@ -270,13 +222,6 @@ public class UserServlet extends HttpServlet {
             errors.add("ID phải có thật!");
         }
 
-//        if (!isId) {
-//            errors.add("ID phải là số nguyên dương !");
-//        }
-//        String userName = request.getParameter("username");
-////                replaceAll(" ", "").toLowerCase();
-//        System.out.println("usernam"+userName);
-//        String password = request.getParameter("password");
         String fullName = request.getParameter("fullname");
         String phone = request.getParameter("phone");
         String email = request.getParameter("email");
@@ -294,15 +239,7 @@ public class UserServlet extends HttpServlet {
                 address.isEmpty()) {
             errors.add("Hãy nhập đầy đủ thông tin");
         }
-//        try {
-//           userId = Long.parseLong(userIdRaw);
-//        user = new User(id, fullName, phone, address);
-//        }catch (NumberFormatException e){
-//            errors.add("ID không tồn tại");
-//        }
-//        if (userName==null || password == null) {
-//            errors.add("username và password không được null!");
-//        }
+
         if (fullName.isEmpty()) {
             errors.add("Full name không được để trống");
         }
@@ -347,7 +284,7 @@ public class UserServlet extends HttpServlet {
             request.setAttribute("user", user);
         }
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/user/edit.jsp");
-//        request.setAttribute("user", user);
+
         dispatcher.forward(request, response);
     }
 
@@ -356,10 +293,6 @@ public class UserServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         userDAO.deleteUser(id);
         response.sendRedirect("/users");
-//        List<User> listUser = userDAO.selectAllUsers();
-//        request.setAttribute("listUser", listUser);
-//        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/user/list.jsp");
-//        dispatcher.forward(request, response);
     }
 
     private void search(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

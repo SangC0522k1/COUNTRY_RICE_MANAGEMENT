@@ -1,7 +1,5 @@
 package com.codegym.connection;
 
-import com.codegym.connection.IConnectionMySQL;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 

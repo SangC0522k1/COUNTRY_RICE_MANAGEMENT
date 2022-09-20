@@ -1,9 +1,7 @@
 package com.codegym.controller;
 
 import com.codegym.dao.ProductDAO;
-import com.codegym.dao.UserDAO;
 import com.codegym.model.Product;
-import com.codegym.model.User;
 import com.codegym.utils.ValidateUtils;
 
 import javax.servlet.RequestDispatcher;
@@ -77,14 +75,6 @@ public class ProductServlet extends HttpServlet {
         }
     }
 
-//    private void listProduct(HttpServletRequest request, HttpServletResponse response)
-//            throws SQLException, IOException, ServletException {
-//        List<Product> listProduct = productDAO.selectAllProduct();
-//        request.setAttribute("listProduct", listProduct);
-//        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/product/list.jsp");
-//        dispatcher.forward(request, response);
-//    }
-
     private void listNumberPage(HttpServletRequest req, HttpServletResponse resp) throws SQLException, ClassNotFoundException, ServletException, IOException {
         System.out.println("numberPage");
         int page = 1;
@@ -99,8 +89,6 @@ public class ProductServlet extends HttpServlet {
         List<Product> listProduct = productDAO.getNumberPage((page - 1) * recordsPerPage, recordsPerPage, name);
         int noOfRecords = productDAO.getNoOfRecords();
         int noOfPages = (int) Math.ceil(noOfRecords * 1.0 / recordsPerPage);
-//        System.out.println("noOfPages" + noOfPages);
-//        System.out.println(noOfRecords);
         req.setAttribute("listProduct", listProduct);
         req.setAttribute("noOfPages", noOfPages);
         req.setAttribute("currentPage", page);
@@ -128,15 +116,6 @@ public class ProductServlet extends HttpServlet {
 
     }
 
-//    private void showDeleteForm(HttpServletRequest request, HttpServletResponse response)
-//            throws SQLException, ServletException, IOException {
-//        int id = Integer.parseInt(request.getParameter("id"));
-//        Product existingUser = productDAO.selectProduct(id);
-//        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/product/delete.jsp");
-//        request.setAttribute("product", existingUser);
-//        dispatcher.forward(request, response);
-//
-//    }
 
     private void insertProduct(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
@@ -171,12 +150,6 @@ public class ProductServlet extends HttpServlet {
             errors.add("Quantity Product không được để trống");
         }
 
-//        if (!isQuantity) {
-//            errors.add("Quantity phải là một số thực >= 0");
-//        }
-//        if (!isPrice) {
-//            errors.add("Price phải là một số thực");
-//        }
         double checkPrice=1.0;
         try {
             if (isPrice)
@@ -198,15 +171,6 @@ public class ProductServlet extends HttpServlet {
         if (!isQuantity || checkQuantity < 0 || checkQuantity>1000) {
             errors.add("Quantity phải là số thực >= 0 và <1000");
         }
-//        try{
-//
-//            if (checkPrice >  500000){
-//                errors.add("Price phải <= 500000 đồng!");
-//            }
-//        }catch (Exception e){
-//            e.printStackTrace();
-//            errors.add("Định dạng giá không hợp lệ");
-//        }
 
 
         if (errors.size() == 0) {
@@ -295,28 +259,7 @@ public class ProductServlet extends HttpServlet {
         if (!isQuantity || checkQuantity < 0 || checkQuantity>1000) {
             errors.add("Quantity phải là số thực >= 0 và <1000");
         }
-//        double checkPrice=1.0;
-//        try {
-//            if (isPrice)
-//                checkPrice = Double.parseDouble(price);
-//        } catch (Exception e) {
-//            errors.add("Price phải là một số và là một số dương");
-//        }
-//        if (!isPrice || checkPrice==0) {
-//            errors.add("Price phải là một số và là một số dương");
-//        }
-//        try{
-//
-//            if (checkPrice >  500000){
-//                errors.add("Price phải <= 500000 đồng!");
-//            }
-//        }catch (Exception e){
-//            e.printStackTrace();
-//            errors.add("Định dạng giá không hợp lệ");
-//        }
-//        if (!isQuantity) {
-//            errors.add("Quantity phải là một số thực >= 0");
-//        }
+
         if (errors.size() == 0) {
             product = new Product(id, name, price, quantity, image);
             boolean success = false;
@@ -343,8 +286,7 @@ public class ProductServlet extends HttpServlet {
 
         List<Product> listProduct = productDAO.selectAllProduct();
         request.setAttribute("listProduct", listProduct);
-//        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/product/list.jsp");
-//        dispatcher.forward(request, response);
+
         response.sendRedirect("/product");
     }
 }

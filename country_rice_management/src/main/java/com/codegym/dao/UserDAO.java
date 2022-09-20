@@ -207,15 +207,11 @@ public class UserDAO implements IUserDAO{
     @Override
     public List<User> selectAllUsers() {
         List<User> users = new ArrayList<>();
-        // Step 1: Establishing a Connection
         try {
             Connection connection = connectionMySQL.getConnection();
 
-            // Step 2:Create a statement using connection object
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_USERS);
-            // Step 3: Execute the query or update query
             ResultSet rs = preparedStatement.executeQuery();
-            // Step 4: Process the ResultSet object.
             while (rs.next()) {
                 String id = rs.getString("id");
                 String username = rs.getString("username");
@@ -247,8 +243,6 @@ public class UserDAO implements IUserDAO{
     public boolean updateUser(User user) throws SQLException {
         boolean rowUpdated;
         try (Connection connection = connectionMySQL.getConnection(); PreparedStatement statement = connection.prepareStatement(UPDATE_USERS_SQL);) {
-//            statement.setString(1, user.getUsername());
-//            statement.setString(2, user.getPassword());
             statement.setString(1, user.getFullName());
             statement.setString(2, user.getPhone());
             statement.setString(3, user.getEmail());

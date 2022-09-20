@@ -37,7 +37,6 @@ public class ProductDAO implements IProductDAO {
     public Boolean insertProduct(Product product) throws SQLException {
         boolean rowInsert = false;
         System.out.println(INSERT_PRODUCT_SQL);
-        // try-with-resource statement will auto close the connection.
         try (Connection connection = connectionMySQL.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_PRODUCT_SQL)) {
             preparedStatement.setString(1, product.getName());
@@ -124,15 +123,10 @@ public class ProductDAO implements IProductDAO {
     @Override
     public List<Product> selectAllProduct() {
         List<Product> products = new ArrayList<>();
-        // Step 1: Establishing a Connection
         try {
             Connection connection = connectionMySQL.getConnection();
-
-            // Step 2:Create a statement using connection object
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_PRODUCT);
-            // Step 3: Execute the query or update query
             ResultSet rs = preparedStatement.executeQuery();
-            // Step 4: Process the ResultSet object.
             while (rs.next()) {
                 String id = rs.getString("id");
                 String name = rs.getString("name");
