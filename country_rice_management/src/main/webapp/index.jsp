@@ -47,7 +47,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        2018 - 2020 &copy; Zircos theme by <a href="">Coderthemes</a>
+                        2022 - 2025 &copy; Zircos theme by <a href="">Rice</a>
                     </div>
                 </div>
             </div>

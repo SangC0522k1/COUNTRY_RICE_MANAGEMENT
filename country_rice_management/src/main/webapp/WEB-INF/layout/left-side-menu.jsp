@@ -42,6 +42,7 @@
                         <li><a href="/logout">Logout</a></li>
                     </ul>
                 </li>
+            </ul>
         </div>
     </div>
 </div>

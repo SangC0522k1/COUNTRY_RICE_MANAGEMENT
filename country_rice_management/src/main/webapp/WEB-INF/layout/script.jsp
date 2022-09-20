@@ -7,10 +7,3 @@
 
 <!-- App js -->
 <script src="/assets\js\app.min.js"></script>
-<%--<script>--%>
-<%--    function search(e) {--%>
-<%--        let form = document.querySelector(".app-search");--%>
-<%--        form.submit();--%>
-<%--        document.querySelector("#searchuser").focus();--%>
-<%--    }--%>
-<%--</script>--%>
