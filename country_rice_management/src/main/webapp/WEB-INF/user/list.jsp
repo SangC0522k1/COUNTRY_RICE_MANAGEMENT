@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: PC
-  Date: 20/07/2022
-  Time: 9:08 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
@@ -17,57 +10,18 @@
     <meta content="Responsive bootstrap 4 admin template" name="description">
     <meta content="Coderthemes" name="author">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <%--    <link href="../../assets\css\bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap-stylesheet">--%>
-    <%--    <link href="../../assets\css\icons.min.css" rel="stylesheet" type="text/css">--%>
-    <%--    <link href="../../assets\css\app.min.css" rel="stylesheet" type="text/css" id="app-stylesheet">--%>
-    <%--    <link rel="stylesheet" href="../../assets\css\css.css" type="text/css" id="css-stylesheet">--%>
-    <%--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />--%>
-
 
     <jsp:include page="/WEB-INF/layout/meta_css.jsp"></jsp:include>
-    <%--    <style>--%>
-    <%--        @font-face {--%>
-    <%--            font-family: 'Source Sans Pro';--%>
-    <%--            font-style: normal;--%>
-    <%--            font-weight: 300;--%>
-    <%--            font-display: swap;--%>
-    <%--            src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdr.ttf) format('truetype');--%>
-    <%--        }--%>
-    <%--        @font-face {--%>
-    <%--            font-family: 'Source Sans Pro';--%>
-    <%--            font-style: normal;--%>
-    <%--            font-weight: 400;--%>
-    <%--            font-display: swap;--%>
-    <%--            src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(s/sourcesanspro/v14/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7g.ttf) format('truetype');--%>
-    <%--        }--%>
-    <%--        @font-face {--%>
-    <%--            font-family: 'Source Sans Pro';--%>
-    <%--            font-style: normal;--%>
-    <%--            font-weight: 600;--%>
-    <%--            font-display: swap;--%>
-    <%--            src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'), url(s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdr.ttf) format('truetype');--%>
-    <%--        }--%>
-    <%--    </style>--%>
+
 </head>
 
 <body>
 
 <!-- Begin page -->
 <div id="wrapper">
-
-
-    <!-- Topbar Start -->
     <jsp:include page="/WEB-INF/layout/navbar-custom.jsp"></jsp:include>
-    <!-- end Topbar -->
-
-    <!-- ========== Left Sidebar Start ========== -->
     <jsp:include page="/WEB-INF/layout/left-side-menu.jsp"></jsp:include>
 
-    <!-- Left Sidebar End -->
-
-    <!-- ============================================================== -->
-    <!-- Start Page Content here -->
-    <!-- ============================================================== -->
 
     <div class="content-page">
         <div class="content">
