@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: PC
-  Date: 20/07/2022
-  Time: 9:08 PM
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
@@ -22,23 +16,9 @@
 </head>
 
 <body>
-
-<!-- Begin page -->
 <div id="wrapper">
-
-
-    <!-- Topbar Start -->
     <jsp:include page="/WEB-INF/layout/navbar-custom.jsp"></jsp:include>
-    <!-- end Topbar -->
-
-    <!-- ========== Left Sidebar Start ========== -->
     <jsp:include page="/WEB-INF/layout/left-side-menu.jsp"></jsp:include>
-
-    <!-- Left Sidebar End -->
-
-    <!-- ============================================================== -->
-    <!-- Start Page Content here -->
-    <!-- ============================================================== -->
 
     <div class="content-page">
         <div class="content">
@@ -116,13 +96,6 @@
 
                     </div>
                  </div>
-            <!-- end container-fluid -->
-
-        <!-- end content -->
-
-
-
-        <!-- Footer Start -->
         <footer class="footer">
             <div class="container-fluid">
                 <div class="row">
@@ -135,13 +108,6 @@
         <!-- end Footer -->
 
     </div>
-    <!-- END wrapper -->
-
-    <!-- Right Sidebar -->
-
-
-
-    <!-- Vendor js -->
     <jsp:include page="/WEB-INF/layout/script.jsp"></jsp:include>
 
 </body>
