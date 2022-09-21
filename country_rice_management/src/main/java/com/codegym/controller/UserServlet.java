@@ -80,7 +80,7 @@ public class UserServlet extends HttpServlet {
     private void listNumberPage(HttpServletRequest req, HttpServletResponse resp) throws SQLException, ClassNotFoundException, ServletException, IOException {
         System.out.println("numberPage");
         int page = 1;
-        int recordsPerPage = 7;
+        int recordsPerPage = 5;
         if (req.getParameter("page") != null) {
             page = Integer.parseInt(req.getParameter("page"));
         };

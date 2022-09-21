@@ -53,7 +53,7 @@
 
                     <div class="form-group">
                       <label for="phone">Phone<span class="text-danger">*</span></label>
-                      <input type="text" name="phone" value="${user.getPhone()}" parsley-trigger="change" required="" placeholder="Enter Phone" class="form-control" id="phone">
+                      <input type="phone" name="phone" value="${user.getPhone()}" parsley-trigger="change" required="" placeholder="Enter Phone" class="form-control" id="phone">
                     </div>
 
                     <div class="form-group">

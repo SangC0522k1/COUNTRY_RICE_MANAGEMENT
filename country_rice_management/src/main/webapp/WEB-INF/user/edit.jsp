@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: PC
-  Date: 20/07/2022
-  Time: 9:08 PM
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
@@ -59,7 +53,7 @@
 
                                 <div class="form-group">
                                     <label for="phone">Phone<span class="text-danger">*</span></label>
-                                    <input type="text" name="phone" parsley-trigger="change" required="" placeholder="Enter Phone" value="${user.getPhone()}" class="form-control" id="phone">
+                                    <input type="phone" name="phone" parsley-trigger="change" required="" placeholder="Enter Phone" value="${user.getPhone()}" class="form-control" id="phone">
                                 </div>
 
                                 <div class="form-group">

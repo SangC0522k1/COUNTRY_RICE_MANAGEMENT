@@ -294,15 +294,15 @@ public class UserDAO implements IUserDAO{
             }
         }
     }
-    public static boolean checkUserExists(String username, String password){
-        if(username.equals("admin")&&password.equals("admin")){
-            return true;
-        }
-        List<User> list = new ArrayList<>();
-        for (User user:list) {
-            if (user.getUsername().equals(username)&&user.getPassword().equals(password))
-                return true;
-        }
-        return false;
-    }
+//    public static boolean checkUserExists(String username, String password){
+//        if(username.equals("admin")&&password.equals("admin")){
+//            return true;
+//        }
+//        List<User> list = new ArrayList<>();
+//        for (User user:list) {
+//            if (user.getUsername().equals(username)&&user.getPassword().equals(password))
+//                return true;
+//        }
+//        return false;
+//    }
 }
